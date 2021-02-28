@@ -25,4 +25,4 @@ then close your game for the whole process!
 4) While ingame, use "damage" as cheatcode to open the GUI.
 
 
-Creator: Montri
+Creator: Montri.
