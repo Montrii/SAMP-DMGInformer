@@ -1,3 +1,0 @@
-band: (integer, integer) -> (integer)
-bor: (integer, integer) -> (integer)
-bxor: (integer, integer) -> (integer)
