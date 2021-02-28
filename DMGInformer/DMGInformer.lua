@@ -766,20 +766,20 @@ function blankIni()
 		damage_stacked = false,
 		given_lockbody = false,
 		given_showdecimals = true,
-		given_externalbell = "moonloader//resource//montris audio//givendamage02.mp3",
+		given_externalbell = getGameDirectory() .. "\\" .. "moonloader\\resource\\montris audio\\givendamage02.mp3",
 		color = {-1},
 		bell = true,
-		taken_damage_mode = false,
+		taken_damage_mode = true,
 		takendamage_stacked = false,
 		takencolor = {-5},
 		takenbell = true,
 		taken_lockbody = false,
 		taken_showdecimals = false,
-		taken_externalbell = "moonloader//resource//montris audio//takendamage03.mp3",
+		taken_externalbell = getGameDirectory() .. "\\" .. "moonloader\\resource\\montris audio\\takendamage02.mp3",
 		deathbell = false,
-		death_externalbell = "moonloader//resource//montris audio//deathsound01.mp3",
+		death_externalbell = getGameDirectory() .. "\\" .. "moonloader\\resource\\montris audio\\deathsound01.mp3",
 		killbell = true,
-		kill_externalbell = "moonloader//resource//montris audio//killsound01.mp3"
+		kill_externalbell = getGameDirectory() .. "\\" .. "moonloader\\resource\\montris audio\\killsound01.mp3"
 	}
 	saveIni()
 end
@@ -838,6 +838,7 @@ function main()
 		imgui.Process = main_window_state.v
 	end
 end
+
 function errorlog(params)
 	local counter = 0
 	local errors = 0
@@ -930,7 +931,7 @@ end
 
 
 function createTakeNumber()
-	if dmg.takendamagemode == true and Take_Boolean == true then
+	if dmg.taken_damage_mode == true and Take_Boolean == true then
 		Take_TextNumber = Take_TextNumber + 1
 		local x, y, z = getCharCoordinates(PLAYER_PED)
 		Take_X = x
@@ -945,14 +946,23 @@ function createTakeNumber()
 		if result then
 			if dmg.takendamage_stacked == true then
 				if Take_PreviousID == Take_ID then
+					if dmg.taken_showdecimals == false then
+						Take_StackedDamage = math.floor(Take_StackedDamage)
+					end 
 					sampCreate3dTextEx(Take_TextNumber, "-"..Take_StackedDamage, dmg.takencolor[1], x, y, z, 50, false, -1, -1)
 				else
 					Take_PreviousID = Take_ID
 					Take_PreviousDamage = Take_Damage
 					Take_StackedDamage = Take_PreviousDamage
+					if dmg.taken_showdecimals == false then
+						Take_Damage = math.floor(Take_Damage)
+					end 
 					sampCreate3dTextEx(Take_TextNumber, "-"..Take_Damage, dmg.takencolor[1], x, y, z, 50, false, -1, -1)
 				end
 			else
+				if dmg.taken_showdecimals == false then
+					Take_Damage = math.floor(Take_Damage)
+				end 
 				sampCreate3dTextEx(Take_TextNumber, "-"..Take_Damage, dmg.takencolor[1], x, y, z, 50, false, -1, -1)
 			end
 			sampDestroy3dText(Take_TextNumber - 1)
