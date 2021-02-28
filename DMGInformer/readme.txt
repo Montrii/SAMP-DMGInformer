@@ -22,7 +22,7 @@ then close your game for the whole process!
 
 3) Use your external reloader or restart your game.
 
-4) While ingame, use "damage" as cheatcode to open the GUI.
+4) While ingame, use "/dmg" as command to open the GUI.
 
 
 Creator: Montri.
