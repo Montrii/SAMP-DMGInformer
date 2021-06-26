@@ -2,7 +2,8 @@
 This repository contains a damageinformer made for the Game "San Andreas Multiplayer" scripted in LUA.
 
 ## Information
-Note: In order to use any .lua mod, you will need to install ASI Loader and moonloader for GTA:SA
+Note: In order to use any .lua mod, you will need to install ASI Loader and moonloader for GTA:SA.
+This modification requires you to install sampfuncs at current version.
 
 You will be able to download this project by simply downloading this repository.
 
