@@ -4,7 +4,7 @@ Before we install the project, make sure your GTA has the following modification
 ASI Loader: https://www.gtagarage.com/mods/show.php?id=21709
 Moonloader: https://gtaforums.com/topic/890987-moonloader/
 Sampfuncs: https://gamemodding.com/en/gta-san-andreas/others/76400-sampfuncs-v-541-final.html
-(Not all of them are needed, but install them to prevent any nasty issues for my projects in general.)
+
 
 If you possess all those mods in your GTA, proceed with the following steps:
 
